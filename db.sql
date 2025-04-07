@@ -50,16 +50,16 @@ VALUES
 
 INSERT INTO productos(id, img_producto, nombre, descripcion, createDat, updatedAt, deletedAt, usuario_id)
 VALUES
-(DEFAULT, "superstar.jpg", "Adidas Superstar", "Zapatillas cómodas y a la moda", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 1),
-(DEFAULT, "airmax90.jpg", "Nike Air Max 90", "Zapatillas clásicas con gran amortiguación", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 2),
-(DEFAULT, "conversehi.jpg", "Converse Chuck Taylor High", "Estilo retro para todos los días", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 1),
-(DEFAULT, "pumarsuede.jpg", "Puma Suede Classic", "Diseño urbano con un toque vintage", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 2),
-(DEFAULT, "nb574.jpg", "New Balance 574", "Comodidad y estilo en cada paso", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 2),
+(DEFAULT, "Superstar", "Adidas Superstar", "Zapatillas cómodas y a la moda", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 1),
+(DEFAULT, "NikeAirMax90", "Nike Air Max 90", "Zapatillas clásicas con gran amortiguación", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 2),
+(DEFAULT, "converse", "Converse Chuck Taylor High", "Estilo retro para todos los días", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 1),
+(DEFAULT, "pumaRosa", "Puma Suede Classic", "Diseño urbano con un toque vintage", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 2),
+(DEFAULT, "NewBalance", "New Balance 574", "Comodidad y estilo en cada paso", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 2),
 (DEFAULT, "reebokclubc.jpg", "Reebok Club C 85", "Elegancia casual para uso diario", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 2),
 (DEFAULT, "vansoldskool.jpg", "Vans Old Skool", "Perfectas para skaters y fans del streetwear", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 5),
 (DEFAULT, "jordan1.jpg", "Air Jordan 1 Retro", "Icónicas zapatillas de básquet y cultura urbana", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 5),
 (DEFAULT, "asicsgel.jpg", "Asics Gel-Lyte III", "Tecnología de amortiguación y diseño único", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 5),
-(DEFAULT, "fila disruptor.jpg", "Fila Disruptor II", "Estilo chunky con mucha personalidad", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 5);
+(DEFAULT, "filaDisruptor.jpg", "Fila Disruptor II", "Estilo chunky con mucha personalidad", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 5);
 
 INSERT INTO comentarios(id, texto, createDat, updatedAt, deletedAt, usuario_id, producto_id)
 VALUES
