@@ -151,7 +151,7 @@ let data = {
             ]
         },
         {
-            imagen: "fila disruptor.jpg",
+            imagen: "filadisruptor.jpg",
             nombre: "Fila Disruptor II",
             descripcion: "Estilo chunky con mucha personalidad",
             comentarios: [
