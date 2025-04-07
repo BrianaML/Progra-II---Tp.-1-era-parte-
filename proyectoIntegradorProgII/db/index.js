@@ -6,7 +6,7 @@ let data = {
             contrasenia: "12345678",
             fecha_nacimiento: "2006-02-04",
             dni: 46051577,
-            foto_perfil: "fotot0.jpg"
+            foto_perfil: "default-image.png"
         },
         {
             email: "juan.perez@mail.com",
@@ -43,7 +43,7 @@ let data = {
     ],
     productos: [
         {
-            imagen: "superstar.jpg",
+            imagen: "Superstar.avif",
             nombre: "Adidas Superstar",
             descripcion: "Zapatillas cómodas y a la moda",
             comentarios: [
@@ -55,7 +55,7 @@ let data = {
             ]
         },
         {
-            imagen: "airmax90.jpg",
+            imagen: "NikeAirMax90.avif",
             nombre: "Nike Air Max 90",
             descripcion: "Zapatillas clásicas con gran amortiguación",
             comentarios: [
@@ -67,7 +67,7 @@ let data = {
             ]
         },
         {
-            imagen: "conversehi.jpg",
+            imagen: "converse.jpg",
             nombre: "Converse Chuck Taylor High",
             descripcion: "Estilo retro para todos los días",
             comentarios: [
@@ -79,7 +79,7 @@ let data = {
             ]
         },
         {
-            imagen: "pumarsuede.jpg",
+            imagen: "pumaRosa.webp",
             nombre: "Puma Suede Classic",
             descripcion: "Diseño urbano con un toque vintage",
             comentarios: [
@@ -91,7 +91,7 @@ let data = {
             ]
         },
         {
-            imagen: "nb574.jpg",
+            imagen: "NewBalance.jpg",
             nombre: "New Balance 574",
             descripcion: "Comodidad y estilo en cada paso",
             comentarios: [
