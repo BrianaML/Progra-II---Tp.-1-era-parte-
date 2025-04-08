@@ -1,7 +1,7 @@
-const controller ={
+const searchResultsController ={
     index: function (req, res) {
         return res.render("searchResults")
     }
 }
 
-module.exports = controller;
+module.exports = searchResultsController;

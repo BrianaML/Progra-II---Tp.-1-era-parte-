@@ -7,7 +7,6 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 
-//var headerLogueadoRouter = require ("./routes/heatherLogueado")
 var loginRouter = require("./routes/login")
 var productRouter = require("./routes/product")
 var productAddRouter = require("./routes/productAdd")

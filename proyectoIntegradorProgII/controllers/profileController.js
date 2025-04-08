@@ -1,7 +1,7 @@
-const controller ={
-    index: function (req, res) {
+const profileController ={
+    profile: function (req, res) {
         return res.render("profile")
     }
 }
 
-module.exports = controller;
+module.exports = profileController;

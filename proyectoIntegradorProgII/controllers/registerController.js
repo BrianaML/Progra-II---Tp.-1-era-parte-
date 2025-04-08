@@ -1,7 +1,7 @@
-const controller ={
-    index: function (req, res) {
+const registerController ={
+    register: function (req, res) {
         return res.render("register")
     }
 }
 
-module.exports = controller;
+module.exports = registerController;
