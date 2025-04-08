@@ -63,13 +63,52 @@ VALUES
 
 INSERT INTO comentarios(id, texto, createDat, updatedAt, deletedAt, usuario_id, producto_id)
 VALUES
+-- Producto 1
 (DEFAULT, "Estas zapas me salvan siempre", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 4, 1),
+(DEFAULT, "Muy buena calidad y super cómodas.", '2025-04-07 12:01:00', '2025-04-07 12:01:00', NULL, 5, 1),
+(DEFAULT, "Son mi primera opción siempre.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 3, 1),
+
+-- Producto 2
 (DEFAULT, "¡Son muy cómodas para correr!", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 5, 2),
+(DEFAULT, "No me hicieron doler nunca los pies.", '2025-04-07 12:01:00', '2025-04-07 12:01:00', NULL, 2, 2),
+(DEFAULT, "Perfectas para entrenar.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 1, 2),
+
+-- Producto 3
 (DEFAULT, "Clásico que nunca falla.", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 3, 3),
+(DEFAULT, "Siempre quise tener unas así.", '2025-04-07 12:01:00', '2025-04-07 12:01:00', NULL, 4, 3),
+(DEFAULT, "Me gusta mucho el diseño retro.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 1, 3),
+
+-- Producto 4
 (DEFAULT, "Las uso todo el tiempo. Re durables.", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 2, 4),
+(DEFAULT, "Van con cualquier look.", '2025-04-07 12:01:00', '2025-04-07 12:01:00', NULL, 3, 4),
+(DEFAULT, "Aguantan un montón el uso diario.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 5, 4),
+
+-- Producto 5
 (DEFAULT, "¡Perfectas para caminar por la ciudad!", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 1, 5),
+(DEFAULT, "Livianas y super cómodas.", '2025-04-07 12:01:00', '2025-04-07 12:01:00', NULL, 2, 5),
+(DEFAULT, "No me canso de usarlas.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 4, 5),
+
+-- Producto 6
 (DEFAULT, "Me encantan con jeans claros.", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 4, 6),
+(DEFAULT, "El color es lo más.", '2025-04-07 12:01:00', '2025-04-07 12:01:00', NULL, 1, 6),
+(DEFAULT, "Van con todo, super recomendadas.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 2, 6),
+
+-- Producto 7
 (DEFAULT, "Re cómodas y combinan con todo.", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 5, 7),
+(DEFAULT, "El diseño me encanta.", '2025-04-07 12:01:00', '2025-04-07 12:01:00', NULL, 3, 7),
+(DEFAULT, "Las volvería a comprar sin dudar.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 4, 7),
+
+-- Producto 8
 (DEFAULT, "Son una joya. Me las pongo solo en ocasiones especiales.", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 2, 8),
+(DEFAULT, "Me gusta mucho cómo brillan.", '2025-04-07 12:01:00', '2025-04-07 12:01:00', NULL, 1, 8),
+(DEFAULT, "Recibo siempre elogios cuando las uso.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 5, 8),
+
+-- Producto 9
 (DEFAULT, "Geniales para el gimnasio.", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 3, 9),
-(DEFAULT, "Me encanta el diseño grueso, son distintas a todo.", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 1, 10);
+(DEFAULT, "No resbalan nada.", '2025-04-07 12:01:00', '2025-04-07 12:01:00', NULL, 4, 9),
+(DEFAULT, "Ideales para entrenar fuerte.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 1, 9),
+
+-- Producto 10
+(DEFAULT, "Me encanta el diseño grueso, son distintas a todo.", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 1, 10),
+(DEFAULT, "Siento que suman un montón de estilo.", '2025-04-07 12:01:00', '2025-04-07 12:01:00', NULL, 3, 10),
+(DEFAULT, "Súper originales, no se ven mucho.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 2, 10);
