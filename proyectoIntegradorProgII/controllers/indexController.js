@@ -1,8 +1,8 @@
 const data= require("../db/index")
 
-const controller={
+const controller ={
     index: function (req, res) {
-        return res.render("index",{title: "Zapelle"})
+        return res.render("index")
     }
 }
 

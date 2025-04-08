@@ -1,6 +1,6 @@
 const controller ={
     index: function (req, res) {
-        return res.render("register")
+        return res.render("headerLogueado")
     }
 }
 
