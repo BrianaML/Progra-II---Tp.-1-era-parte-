@@ -1,9 +1,9 @@
 const data= require("../db/index")
 
-const controller={
+const indexController ={
     index: function (req, res) {
         return res.render("index")
     }
 }
 
-module.exports=controller
+module.exports= indexController;
