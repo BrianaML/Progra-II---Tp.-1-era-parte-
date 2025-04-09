@@ -55,9 +55,12 @@ figure {
 }
 
 img {
-  width: 100%;
+  width: 100%
 }
-
+.imgProd{
+  width: 210px;
+  height: 210px;
+}
 input,
 textarea {
   font-family: inherit;
@@ -455,6 +458,48 @@ textarea.form-input {
   min-height: 140px;
   resize: vertical;
   padding: 15px;
+}
+
+.form_container{
+  background-color: #f9e3d9;
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+.form_container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form_container label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form_container input {
+  width: 100%;
+  padding: 7px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form_container button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background-color: #a15d2a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form_container button:hover {
+  background-color: #874b22;
 }
 
 /*====== Profile ======*/
