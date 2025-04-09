@@ -42,11 +42,11 @@ CREATE TABLE comentarios (
 
 INSERT INTO usuarios(id, email, contrasenia, fecha_nacimiento, dni, foto_perfil, createDat, updatedAt, deletedAt)
 VALUES 
-(DEFAULT, "cdechazal@udesa.edu.ar", "12345678", "2006-02-04", 46051577, "fotot0.jpg", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL),
-(DEFAULT, "juan.perez@mail.com", "claveSegura1", "2000-05-10", 40123456, "foto1.jpg", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL),
-(DEFAULT, "maria.lopez@mail.com", "password2024", "1998-11-23", 39234567, "foto2.png", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL),
-(DEFAULT, "lucas.gomez@mail.com", "lucasPass9", "2002-07-15", 41234567, "foto3.jpeg", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL),
-(DEFAULT, "sofia.ramirez@mail.com", "sofi4Life", "1995-03-28", 38234567, "foto4.jpg", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL);
+(DEFAULT, "cdechazal@udesa.edu.ar", "12345678", "2006-02-04", 46051577, "default-image.png", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL),
+(DEFAULT, "juan.perez@mail.com", "claveSegura1", "2000-05-10", 40123456, "default-image.png", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL),
+(DEFAULT, "maria.lopez@mail.com", "password2024", "1998-11-23", 39234567, "queen.jpeg", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL),
+(DEFAULT, "lucas.gomez@mail.com", "lucasPass9", "2002-07-15", 41234567, "cute.jpeg", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL),
+(DEFAULT, "sofia.ramirez@mail.com", "sofi4Life", "1995-03-28", 38234567, "gato.jpeg", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL);
 
 INSERT INTO productos(id, img_producto, nombre, descripcion, createDat, updatedAt, deletedAt, usuario_id)
 VALUES
