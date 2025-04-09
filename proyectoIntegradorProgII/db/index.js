@@ -14,7 +14,7 @@ let data = {
             contrasenia: "claveSegura1",
             fecha_nacimiento: "2000-05-10",
             dni: 40123456,
-            foto_perfil: "foto1.jpg"
+            foto_perfil: "default-image.png"
         },
         {
             email: "maria.lopez@mail.com",
@@ -22,7 +22,7 @@ let data = {
             contrasenia: "password2024",
             fecha_nacimiento: "1998-11-23",
             dni: 39234567,
-            foto_perfil: "foto2.png"
+            foto_perfil: "queen.jpeg"
         },
         {
             email: "lucas.gomez@mail.com",
@@ -30,7 +30,7 @@ let data = {
             contrasenia: "lucasPass9",
             fecha_nacimiento: "2002-07-15",
             dni: 41234567,
-            foto_perfil: "foto3.jpeg"
+            foto_perfil: "cute.jpeg"
         },
         {
             email: "sofia.ramirez@mail.com",
@@ -38,7 +38,7 @@ let data = {
             contrasenia: "sofi4Life",
             fecha_nacimiento: "1995-03-28",
             dni: 38234567,
-            foto_perfil: "foto4.jpg"
+            foto_perfil: "gato.jpeg"
         }
     ],
     productos: [
