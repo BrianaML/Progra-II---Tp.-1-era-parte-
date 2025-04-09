@@ -261,7 +261,8 @@ let data = {
                     imagen_perfil: "foto1.jpg"
                 }
             ]
-        }]};
-
+        }
+    ]
+};
 
 module.exports = data;
