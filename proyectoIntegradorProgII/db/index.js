@@ -51,6 +51,16 @@ let data = {
                     nombre_usuario: "lucas.gomez",
                     texto: "Estas zapas me salvan siempre",
                     imagen_perfil: "foto3.jpeg"
+                },
+                {
+                    nombre_usuario: "sofia.ramirez",
+                    texto: "Muy buena calidad y super cómodas.",
+                    imagen_perfil: "foto4.jpg"
+                },
+                {
+                    nombre_usuario: "maria.lopez",
+                    texto: "Son mi primera opción siempre.",
+                    imagen_perfil: "foto2.png"
                 }
             ]
         },
@@ -63,6 +73,16 @@ let data = {
                     nombre_usuario: "sofia.ramirez",
                     texto: "¡Son muy cómodas para correr!",
                     imagen_perfil: "foto4.jpg"
+                },
+                {
+                    nombre_usuario: "juan.perez",
+                    texto: "No me hicieron doler nunca los pies.",
+                    imagen_perfil: "foto1.jpg"
+                },
+                {
+                    nombre_usuario: "cdechazal",
+                    texto: "Perfectas para entrenar.",
+                    imagen_perfil: "fotot0.jpg"
                 }
             ]
         },
@@ -75,6 +95,16 @@ let data = {
                     nombre_usuario: "maria.lopez",
                     texto: "Clásico que nunca falla.",
                     imagen_perfil: "foto2.png"
+                },
+                {
+                    nombre_usuario: "lucas.gomez",
+                    texto: "Siempre quise tener unas así.",
+                    imagen_perfil: "foto3.jpeg"
+                },
+                {
+                    nombre_usuario: "cdechazal",
+                    texto: "Me gusta mucho el diseño retro.",
+                    imagen_perfil: "fotot0.jpg"
                 }
             ]
         },
@@ -87,6 +117,16 @@ let data = {
                     nombre_usuario: "juan.perez",
                     texto: "Las uso todo el tiempo. Re durables.",
                     imagen_perfil: "foto1.jpg"
+                },
+                {
+                    nombre_usuario: "maria.lopez",
+                    texto: "Van con cualquier look.",
+                    imagen_perfil: "foto2.png"
+                },
+                {
+                    nombre_usuario: "sofia.ramirez",
+                    texto: "Aguantan un montón el uso diario.",
+                    imagen_perfil: "foto4.jpg"
                 }
             ]
         },
@@ -99,6 +139,16 @@ let data = {
                     nombre_usuario: "cdechazal",
                     texto: "¡Perfectas para caminar por la ciudad!",
                     imagen_perfil: "fotot0.jpg"
+                },
+                {
+                    nombre_usuario: "juan.perez",
+                    texto: "Livianas y super cómodas.",
+                    imagen_perfil: "foto1.jpg"
+                },
+                {
+                    nombre_usuario: "lucas.gomez",
+                    texto: "No me canso de usarlas.",
+                    imagen_perfil: "foto3.jpeg"
                 }
             ]
         },
@@ -111,6 +161,16 @@ let data = {
                     nombre_usuario: "lucas.gomez",
                     texto: "Me encantan con jeans claros.",
                     imagen_perfil: "foto3.jpeg"
+                },
+                {
+                    nombre_usuario: "maria.lopez",
+                    texto: "El color es lo más.",
+                    imagen_perfil: "foto2.png"
+                },
+                {
+                    nombre_usuario: "juan.perez",
+                    texto: "Van con todo, super recomendadas.",
+                    imagen_perfil: "foto1.jpg"
                 }
             ]
         },
@@ -123,6 +183,16 @@ let data = {
                     nombre_usuario: "sofia.ramirez",
                     texto: "Re cómodas y combinan con todo.",
                     imagen_perfil: "foto4.jpg"
+                },
+                {
+                    nombre_usuario: "maria.lopez",
+                    texto: "El diseño me encanta.",
+                    imagen_perfil: "foto2.png"
+                },
+                {
+                    nombre_usuario: "lucas.gomez",
+                    texto: "Las volvería a comprar sin dudar.",
+                    imagen_perfil: "foto3.jpeg"
                 }
             ]
         },
@@ -135,6 +205,16 @@ let data = {
                     nombre_usuario: "juan.perez",
                     texto: "Son una joya. Me las pongo solo en ocasiones especiales.",
                     imagen_perfil: "foto1.jpg"
+                },
+                {
+                    nombre_usuario: "cdechazal",
+                    texto: "Me gusta mucho cómo brillan.",
+                    imagen_perfil: "fotot0.jpg"
+                },
+                {
+                    nombre_usuario: "sofia.ramirez",
+                    texto: "Recibo siempre elogios cuando las uso.",
+                    imagen_perfil: "foto4.jpg"
                 }
             ]
         },
@@ -147,6 +227,16 @@ let data = {
                     nombre_usuario: "maria.lopez",
                     texto: "Geniales para el gimnasio.",
                     imagen_perfil: "foto2.png"
+                },
+                {
+                    nombre_usuario: "lucas.gomez",
+                    texto: "No resbalan nada.",
+                    imagen_perfil: "foto3.jpeg"
+                },
+                {
+                    nombre_usuario: "juan.perez",
+                    texto: "Ideales para entrenar fuerte.",
+                    imagen_perfil: "foto1.jpg"
                 }
             ]
         },
@@ -159,12 +249,19 @@ let data = {
                     nombre_usuario: "cdechazal",
                     texto: "Me encanta el diseño grueso, son distintas a todo.",
                     imagen_perfil: "fotot0.jpg"
+                },
+                {
+                    nombre_usuario: "maria.lopez",
+                    texto: "Siento que suman un montón de estilo.",
+                    imagen_perfil: "foto2.png"
+                },
+                {
+                    nombre_usuario: "juan.perez",
+                    texto: "Súper originales, no se ven mucho.",
+                    imagen_perfil: "foto1.jpg"
                 }
             ]
-        }
-    ]
-};
-
+        }]};
 
 
 module.exports = data;
