@@ -1,4 +1,4 @@
-const data = require('../db/index')
+
 
 const loginController ={
     login: function (req, res) {
