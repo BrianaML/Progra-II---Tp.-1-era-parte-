@@ -261,7 +261,8 @@ let data = {
                     imagen_perfil: "/images/users/queen.jpeg"
                 }
             ]
-        }]};
-
+        }
+    ]
+};
 
 module.exports = data;
