@@ -8,10 +8,62 @@
             <h2 class="products-title">Resultados de búsqueda</h2>
         </div>
         <!-- Show the "ultimos" products -->
-        <h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-        Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-        ////////////////
-        </h2>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <section class="product-box">
+                <a href="/product">
+                    <figure class="product-box_image imgProd">
+                        <img src="<%= data.productos[6].imagen %>" alt="<%= data.productos[6].descripcion %>">
+                    </figure>
+                    <article class="product-box_data">
+                        <h2><%= data.productos[6].nombre %></h2>
+                        <p><%= data.productos[6].descripcion %></p>
+                        <p>Comentarios: 12</p>
+                    </article>
+                </a>
+            </section>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <section class="product-box">
+                <a href="/product">
+                    <figure class="product-box_image imgProd">
+                        <img src="<%= data.productos[1].imagen %>" alt="<%= data.productos[1].descripcion %>">
+                    </figure>
+                    <article class="product-box_data">
+                        <h2><%= data.productos[1].nombre %></h2>
+                        <p><%= data.productos[1].descripcion %></p>
+                        <p>Comentarios: 12</p>
+                    </article>
+                </a>
+            </section>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <section class="product-box">
+                <a href="/product">
+                    <figure class="product-box_image imgProd">
+                        <img src="<%= data.productos[3].imagen %>" alt="<%= data.productos[3].descripcion %>">
+                    </figure>
+                    <article class="product-box_data">
+                        <h2><%= data.productos[3].nombre %></h2>
+                        <p><%= data.productos[3].descripcion %></p>
+                        <p>Comentarios: 12</p>
+                    </article>
+                </a>
+            </section>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <section class="product-box">
+                <a href="/product">
+                    <figure class="product-box_image imgProd">
+                        <img src="<%= data.productos[0].imagen %>" alt="<%= data.productos[0].descripcion %>">
+                    </figure>
+                    <article class="product-box_data">
+                        <h2><%= data.productos[0].nombre %></h2>
+                        <p><%= data.productos[0].descripcion %></p>
+                        <p>Comentarios: 12</p>
+                    </article>
+                </a>
+            </section>
+        </div>
     </div>
 </div>
 
