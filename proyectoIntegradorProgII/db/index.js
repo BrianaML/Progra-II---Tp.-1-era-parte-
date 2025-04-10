@@ -110,7 +110,7 @@ let data = {
         },
         {
             imagen: "/images/products/pumaRosa.webp",
-            nombre: "Puma Suede Classic",
+            nombre: "Puma Suede",
             descripcion: "Diseño urbano con un toque vintage",
             comentarios: [
                 {
