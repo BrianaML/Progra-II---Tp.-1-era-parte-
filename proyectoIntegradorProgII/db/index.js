@@ -153,7 +153,7 @@ let data = {
             ]
         },
         {
-            imagen: "/images/products/reebokclubc.jpg",
+            imagen: "/images/products/reebokclubc.jpg.webp",
             nombre: "Reebok Club C 85",
             descripcion: "Elegancia casual para uso diario",
             comentarios: [
@@ -175,7 +175,7 @@ let data = {
             ]
         },
         {
-            imagen: "/images/products/vansoldskool.jpg",
+            imagen: "/images/products/vansoldskool.jpg.webp",
             nombre: "Vans Old Skool",
             descripcion: "Perfectas para skaters y fans del streetwear",
             comentarios: [
@@ -197,7 +197,7 @@ let data = {
             ]
         },
         {
-            imagen: "/images/products/jordan1.jpg",
+            imagen: "/images/products/jordan1.jpg.jpg",
             nombre: "Air Jordan 1 Retro",
             descripcion: "Icónicas zapatillas de básquet y cultura urbana",
             comentarios: [
@@ -219,7 +219,7 @@ let data = {
             ]
         },
         {
-            imagen: "/images/products/asicsgel.jpg",
+            imagen: "/images/products/asicsgel.jpg.webp",
             nombre: "Asics Gel-Lyte III",
             descripcion: "Tecnología de amortiguación y diseño único",
             comentarios: [
@@ -241,7 +241,7 @@ let data = {
             ]
         },
         {
-            imagen: "/images/products/filadisruptor.jpg",
+            imagen: "/images/products/filadisruptor.jpg.webp",
             nombre: "Fila Disruptor II",
             descripcion: "Estilo chunky con mucha personalidad",
             comentarios: [

@@ -7,13 +7,13 @@
             <h2 class="products-title">Ingresar</h2>
         </div>
         <!-- Show the "ultimos" products -->
-        <h2 class="col-12 form_container">
-            <form action="/profile" method="get">
+        <h2 class="col-12">
+            <form action="/profile" method="get" class="form_container">
                 <label for="email">Email:
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" required>
                 </label>
                 <label for="contrasennia">Contraseña:
-                    <input type="password" id="contrasennia" name="contrasennia" >
+                    <input type="password" id="contrasennia" name="contrasennia" required>
                 </label>
                 <label for="recordarme">Recordarme
                     <input type="checkbox" id="recordarme" name="recordarme">
@@ -23,4 +23,5 @@
         </h2>
     </div>
 </div>
-        <%- include("./partials/footer") %>
+
+<%- include("./partials/footer") %>

@@ -10,11 +10,11 @@
         <div class="data-container col-6">
             <div class="d-flex align-items-center ">
                 <h1 class="main-title"> <%= data.usuario[0].usuario %>
-                    <a href="profile-edit.html">
+                    <a href="/profile">
                         <i class="fas fa-cog"></i>
                     </a>
                 </h1>
-                <a class="btn mt-3 ml-4" href="">SEGUIR</a>
+                <a class="btn mt-3 ml-4" href="/">SEGUIR</a>
             </div>
             <div>
                 <ul class="">
@@ -35,118 +35,118 @@
                 <h2 class="products-title">Mis productos</h2>
             </div>
             <!-- Show mis productos -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    <a href="product.html">
-                        <figure class="product-box_image">
-                            <img src="<%= data.productos[0].imagen %>" alt="cafetera moulinex">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2><%= data.productos[0].nombre %></h2>
-                            <p><%= data.productos[0].descripcion %></p>
-                            <p>Comentarios: 3</p>
-                        </article>
-                    </a>
-                </section>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    <a href="product.html">
-                        <figure class="product-box_image">
-                            <img src="<%= data.productos[1].imagen %>" alt="cafetera moulinex">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2><%= data.productos[1].nombre %></h2>
-                            <p><%= data.productos[1].descripcion %></p>
-                            <p>Comentarios: 3</p>
-                        </article>
-                    </a>
-                </section>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    <a href="product.html">
-                        <figure class="product-box_image">
-                            <img src="<%= data.productos[2].imagen %>" alt="cafetera moulinex">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2><%= data.productos[2].nombre %></h2>
-                            <p><%= data.productos[2].descripcion %></p>
-                            <p>Comentarios: 3</p>
-                        </article>
-                    </a>
-                </section>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    <a href="product.html">
-                        <figure class="product-box_image">
-                            <img src="<%= data.productos[3].imagen %>" alt="cafetera moulinex">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2><%= data.productos[3].nombre %>o</h2>
-                            <p><%= data.productos[3].descripcion %></p>
-                            <p>Comentarios: 3</p>
-                        </article>
-                    </a>
-                </section>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    <a href="product.html">
-                        <figure class="product-box_image">
-                            <img src="<%= data.productos[4].imagen %>" alt="cafetera moulinex">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2><%= data.productos[4].nombre %></h2>
-                            <p><%= data.productos[4].descripcion %></p>
-                            <p>Comentarios: 3</p>
-                        </article>
-                    </a>
-                </section>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    <a href="product.html">
-                        <figure class="product-box_image">
-                            <img src="<%= data.productos[5].imagen %>" alt="cafetera moulinex">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2><%= data.productos[5].nombre %></h2>
-                            <p><%= data.productos[5].descripcion %></p>
-                            <p>Comentarios: 3</p>
-                        </article>
-                    </a>
-                </section>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    <a href="product.html">
-                        <figure class="product-box_image">
-                            <img src= "<%= data.productos[6].imagen %>" alt="cafetera moulinex">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2><%= data.productos[6].nombre %></h2>
-                            <p><%= data.productos[6].descripcion %></p>
-                            <p>Comentarios: 3</p>
-                        </article>
-                    </a>
-                </section>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    <a href="product.html">
-                        <figure class="product-box_image">
-                            <img src="<%= data.productos[7].imagen %>" alt="cafetera moulinex">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2><%= data.productos[7].nombre %></h2>
-                            <p><%= data.productos[7].descripcion %></p>
-                            <p>Comentarios: 3</p>
-                        </article>
-                    </a>
-                </section>
-            </div>
+                <div class="col-12 col-sm-6 col-lg-3 img-profile">
+                    <section class="product-box">
+                        <a href="/product">
+                            <figure class="product-box_image">
+                                <img src="<%= data.productos[0].imagen %>" alt="">
+                            </figure>
+                            <article class="product-box_data">
+                                <h2><%= data.productos[0].nombre %></h2>
+                                <p><%= data.productos[0].descripcion %></p>
+                                <p>Comentarios: 3</p>
+                            </article>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 img-profile">
+                    <section class="product-box">
+                        <a href="/product">
+                            <figure class="product-box_image">
+                                <img src="<%= data.productos[1].imagen %>" alt="">
+                            </figure>
+                            <article class="product-box_data">
+                                <h2><%= data.productos[1].nombre %></h2>
+                                <p><%= data.productos[1].descripcion %></p>
+                                <p>Comentarios: 3</p>
+                            </article>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 img-profile">
+                    <section class="product-box">
+                        <a href="/product">
+                            <figure class="product-box_image">
+                                <img src="<%= data.productos[2].imagen %>" alt="">
+                            </figure>
+                            <article class="product-box_data">
+                                <h2><%= data.productos[2].nombre %></h2>
+                                <p><%= data.productos[2].descripcion %></p>
+                                <p>Comentarios: 3</p>
+                            </article>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 img-profile">
+                    <section class="product-box">
+                        <a href="/product">
+                            <figure class="product-box_image">
+                                <img src="<%= data.productos[3].imagen %>" alt="">
+                            </figure>
+                            <article class="product-box_data">
+                                <h2><%= data.productos[3].nombre %>o</h2>
+                                <p><%= data.productos[3].descripcion %></p>
+                                <p>Comentarios: 3</p>
+                            </article>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 img-profile">
+                    <section class="product-box">
+                        <a href="/product">
+                            <figure class="product-box_image">
+                                <img src="<%= data.productos[4].imagen %>" alt="">
+                            </figure>
+                            <article class="product-box_data">
+                                <h2><%= data.productos[4].nombre %></h2>
+                                <p><%= data.productos[4].descripcion %></p>
+                                <p>Comentarios: 3</p>
+                            </article>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 img-profile">
+                    <section class="product-box">
+                        <a href="/product">
+                            <figure class="product-box_image">
+                                <img src="<%= data.productos[5].imagen %>" alt="">
+                            </figure>
+                            <article class="product-box_data">
+                                <h2><%= data.productos[5].nombre %></h2>
+                                <p><%= data.productos[5].descripcion %></p>
+                                <p>Comentarios: 3</p>
+                            </article>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 img-profile">
+                    <section class="product-box">
+                        <a href="/product">
+                            <figure class="product-box_image">
+                                <img src= "<%= data.productos[6].imagen %>" alt="">
+                            </figure>
+                            <article class="product-box_data">
+                                <h2><%= data.productos[6].nombre %></h2>
+                                <p><%= data.productos[6].descripcion %></p>
+                                <p>Comentarios: 3</p>
+                            </article>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 img-profile">
+                    <section class="product-box">
+                        <a href="/product">
+                            <figure class="product-box_image">
+                                <img src="<%= data.productos[7].imagen %>" alt="">
+                            </figure>
+                            <article class="product-box_data">
+                                <h2><%= data.productos[7].nombre %></h2>
+                                <p><%= data.productos[7].descripcion %></p>
+                                <p>Comentarios: 3</p>
+                            </article>
+                        </a>
+                    </section>
+                </div>
         </div>
     </div>
 

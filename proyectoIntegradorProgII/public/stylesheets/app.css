@@ -7,7 +7,7 @@
   --yellow: #a75f37;
   --dark-blue: #7a958f;
   --light-blue: #bae0da;
-  --gray: #d9b99f;
+  --gray: #8c7664;
   --light-gray: #f2d6ce;
   --green: #ca8e82;
   --base-font-family: 'Roboto', sans-serif
@@ -177,7 +177,7 @@ hr {
 
 .products-title {
   font-size: 2.4em;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--gray);
 }
 
@@ -525,7 +525,10 @@ textarea.form-input {
   color: #fff;
 }
 
-
+.img-profile img{
+  width: auto;
+  height: 260px;
+}
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
   .main-header_credit-link {
