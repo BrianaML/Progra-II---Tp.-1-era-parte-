@@ -9,7 +9,7 @@ CREATE TABLE usuarios (
     fecha_nacimiento DATE NOT NULL,
     dni INT NOT NULL UNIQUE, 
     foto_perfil VARCHAR(255) DEFAULT "",
-    createDat TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP 
 );
@@ -19,7 +19,7 @@ CREATE TABLE productos (
 	img_producto VARCHAR(255) DEFAULT "",
     nombre VARCHAR(100) NOT NULL, 
     descripcion VARCHAR(255) NOT NULL, 
-    createDat TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP, 
     usuario_id INT UNSIGNED NOT NULL, 
@@ -29,7 +29,7 @@ CREATE TABLE productos (
 CREATE TABLE comentarios (
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     texto VARCHAR(100) NOT NULL,
-    createDat TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
     usuario_id INT UNSIGNED NOT NULL, 
@@ -40,7 +40,7 @@ CREATE TABLE comentarios (
 
 -- 5 usuarios, 10 posteos, 3 comentarios (per posteo) > modulo de datos
 
-INSERT INTO usuarios(id, email, contrasenia, fecha_nacimiento, dni, foto_perfil, createDat, updatedAt, deletedAt)
+INSERT INTO usuarios(id, email, contrasenia, fecha_nacimiento, dni, foto_perfil, createdAt, updatedAt, deletedAt)
 VALUES 
 (DEFAULT, "cdechazal@udesa.edu.ar", "12345678", "2006-02-04", 46051577, "default-image.png", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL),
 (DEFAULT, "juan.perez@mail.com", "claveSegura1", "2000-05-10", 40123456, "default-image.png", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL),
@@ -48,7 +48,7 @@ VALUES
 (DEFAULT, "lucas.gomez@mail.com", "lucasPass9", "2002-07-15", 41234567, "cute.jpeg", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL),
 (DEFAULT, "sofia.ramirez@mail.com", "sofi4Life", "1995-03-28", 38234567, "gato.jpeg", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL);
 
-INSERT INTO productos(id, img_producto, nombre, descripcion, createDat, updatedAt, deletedAt, usuario_id)
+INSERT INTO productos(id, img_producto, nombre, descripcion, createdAt, updatedAt, deletedAt, usuario_id)
 VALUES
 (DEFAULT, "Superstar.avif", "Adidas Superstar", "Zapatillas cómodas y a la moda", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 1),
 (DEFAULT, "NikeAirMax90.avif", "Nike Air Max 90", "Zapatillas clásicas con gran amortiguación", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 2),
@@ -61,7 +61,7 @@ VALUES
 (DEFAULT, "asicsgel.jpg", "Asics Gel-Lyte III", "Tecnología de amortiguación y diseño único", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 5),
 (DEFAULT, "filaDisruptor.jpg", "Fila Disruptor II", "Estilo chunky con mucha personalidad", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 5);
 
-INSERT INTO comentarios(id, texto, createDat, updatedAt, deletedAt, usuario_id, producto_id)
+INSERT INTO comentarios(id, texto, createdAt, updatedAt, deletedAt, usuario_id, producto_id)
 VALUES
 -- Producto 1
 (DEFAULT, "Estas zapas me salvan siempre", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 4, 1),
