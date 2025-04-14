@@ -8,7 +8,7 @@
             </div>
 
             <div class="col-7 col-md-6">
-                <form action="/searchResults" method="GET" class="search-form">
+                <form action="/product/searchResults" method="GET" class="search-form">
                     <input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
                     <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
                 </form>
@@ -47,11 +47,11 @@
             -->
                 <!-- Los li con register y loguin deben ocultarse si el usuario está logueado -->
                 <li>
-                    <a href="/register">Creá tu cuenta <i class="far fa-address-card"></i>
+                    <a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+                    <a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
                 </li>
             </ul>
         </nav>

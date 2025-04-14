@@ -6,7 +6,7 @@
     <div class="d-flex align-items-center">
         <h2 class="products-title"><%= data.productos[0].nombre %></h2> 
         <p class="product-detail-description">
-            <a href="/productAdd">Editar</a>
+            <a href="/product/productAdd">Editar</a>
         </p>
     </div>
     <div class="product-detail">
@@ -22,7 +22,7 @@
                             <img src="<%= data.productos[0].comentarios[i].imagen_perfil %>" alt="">
                             <div class="data">
                                 <p class="user"> 
-                                    <strong><a href="profile.html"></a> <%= data.productos[0].comentarios[i].nombre_usuario %></strong>
+                                    <strong><a href="/users/profile"></a> <%= data.productos[0].comentarios[i].nombre_usuario %></strong>
                                 </p>
                                 <p><%= data.productos[0].comentarios[i].texto %></p>
                             </div>
