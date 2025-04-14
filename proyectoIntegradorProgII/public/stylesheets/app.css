@@ -303,11 +303,14 @@ hr {
   padding: 15px 0;
 }
 .footer-data h3{
-  color: #874b22;
+  color: #e0bc8e;
   font-weight: 500;
   font-size: large;
 }
-
+.block{
+  background-color: #4a2712;
+  padding: 15px;
+}
 
 /*====== Product Detail ======*/
 .product-detail {
