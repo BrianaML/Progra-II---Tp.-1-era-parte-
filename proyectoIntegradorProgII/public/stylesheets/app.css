@@ -302,6 +302,11 @@ hr {
   color: var(--gray);
   padding: 15px 0;
 }
+.footer-data h3{
+  color: #874b22;
+  font-weight: 500;
+  font-size: large;
+}
 
 
 /*====== Product Detail ======*/
