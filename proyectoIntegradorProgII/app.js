@@ -8,7 +8,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 
 var loginRouter = require("./routes/login")
-var productRouter = require("./routes/product")
+var productRouter = require("./routes/products")
 var productAddRouter = require("./routes/productAdd")
 var profileRouter = require("./routes/profile")
 var registerRouter = require("./routes/register")
