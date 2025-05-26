@@ -68,8 +68,14 @@ const usersController = {
             .catch(function (error) {
                 return res.send("Ocurrió un error al crear el usuario.");
             });
-            
+        return res.cookie('usuarioEmail', usuarioLogged ,{ maxAge: 1000 * 60 * 60 * 24});
+        
     },
+    logout: function (req, res) {
+        res.clearCookie('usuarioEmail');
+        req.session.destroy() ;
+        return res.redirect('/');
+},
 }
 
 module.exports = usersController;
