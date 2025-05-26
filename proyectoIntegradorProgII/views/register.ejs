@@ -1,6 +1,10 @@
 <%- include("./partials/head") %>
-<%- include("./partials/header")%>
-
+<% if (isLogged) { %>
+    <p>Hola, <%= usuario.usuario %>!</p>
+    <%- include("./partials/headerLogueado") %>
+<% } else { %>
+    <%- include("./partials/header") %>
+<% } %>
 <!-- Novedades -->
 <div class="container products-wrapper">
     <div class="row">

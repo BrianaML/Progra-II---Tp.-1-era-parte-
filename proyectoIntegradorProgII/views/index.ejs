@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include("./partials/head") %>
-<%- include("./partials/header")%>
+<% if (isLogged) { %>
+	<p>Hola, <%= usuario.usuario %>!</p>
+	<%- include("./partials/headerLogueado") %>
+<% } else { %>
+	<%- include("./partials/header") %>
+<% } %>
 <body>	
 	<!-- Banner -->
 	<div class="banner">
 		<img src="images/banner.png" alt="Banner de ofertas">
 	</div>
-	<!-- /Banner -->
-
+<% if (isLogged) { %>
+	<p>Hola, <%= usuario.nombre_usuario %>!</p>
+<% } %>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -32,8 +38,6 @@
 					</section>
 				</div>
 			<% } %>
-			
-			
 		</div>
 	</div>
 </body>	

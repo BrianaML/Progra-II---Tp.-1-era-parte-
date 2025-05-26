@@ -30,6 +30,38 @@ app.use(session({ secret: "zapelle",
 				saveUninitialized: true }
       ));
 
+app.use(function(req, res, next) {
+	res.locals.usuarioLogged = req.session.usuarioLogged
+	return next();
+});
+
+app.use(function userLoggedMiddleware(req, res, next) {
+  res.locals.isLogged = false;
+
+  if (req.session.usuarioLogged) {
+    res.locals.isLogged = true;
+    res.locals.usuario = req.session.usuarioLogged;
+    return next();
+  }
+
+  if (req.cookies.usuarioEmail) {
+    db.Usuario.findOne({ where: { email: req.cookies.usuarioEmail } })
+      .then(usuario => {
+        if (usuario) {
+          req.session.usuarioLogged = {
+            id: usuario.id,
+            email: usuario.email,
+            nombre_usuario: usuario.nombre_usuario
+          };
+          res.locals.isLogged = true;
+          res.locals.usuario = req.session.usuarioLogged;
+        }
+        return next();
+      });
+  } else {
+    return next();
+  }
+})
 
 app.use('/', indexRouter);
 app.use("/product", productRouter)
