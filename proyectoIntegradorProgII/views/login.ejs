@@ -8,12 +8,14 @@
         </div>
         <!-- Show the "ultimos" products -->
         <h2 class="col-12">
-            <form action="/users" method="get" class="form_container">
+            <form action="/users" method="POST" class="form_container">
                 <label for="email">Email:
                     <input type="email" id="email" name="email" required>
+                    <%= message %>
                 </label>
-                <label for="contrasennia">Contraseña:
-                    <input type="password" id="contrasennia" name="contrasennia" required>
+                <label for="contrasenia">Contraseña:
+                    <input type="password" id="contrasenia" name="contrasenia" required>
+                    <%= message %>
                 </label>
                 <label for="recordarme">Recordarme
                     <input type="checkbox" id="recordarme" name="recordarme">
