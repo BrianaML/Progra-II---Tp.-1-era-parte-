@@ -1,4 +1,5 @@
 const data = require('../db/index')
+let bcrypt = require('bcryptjs');
 
 const productController ={
     product: function (req, res) {
