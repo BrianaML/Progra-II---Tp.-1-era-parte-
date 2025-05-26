@@ -2,25 +2,25 @@ module.exports = function (sequelize, dataTypes) {
     let alias= "producto";
     let cols = {
         id: {
-            type: DataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
         img_producto: {
-            type: DataTypes.STRING(255),
+            type: dataTypes.STRING(255),
             defaultValue: "",
         },
         nombre: {
-            type: DataTypes.STRING(100),
+            type: dataTypes.STRING(100),
             allowNull: false,
         },
         descripcion: {
-            type: DataTypes.STRING(255),
+            type: dataTypes.STRING(255),
             allowNull: false,
         },
         usuario_id: {
-            type: DataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         }
     }
@@ -44,6 +44,6 @@ module.exports = function (sequelize, dataTypes) {
             as: "comentarios"
         });
     };
-    
+
     return Producto;
 }
