@@ -13,8 +13,8 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.STRING(100)
         },
         usuario: {
-            type: dataTypes.STRING(100),
-            allowNull: false,
+            type: dataTypes.STRING(50),
+            allowNull: false
         },
         contrasenia: {
             allowNull: false,
