@@ -16,14 +16,18 @@
             <form action="/users/profile" method="post">
                 <label for="email">Email: 
                     <input type="email" id="email" name="email" required>
-                    <p> <%= Error %> </p>
+                    <% if (errorMessage) { %>
+                    <p class="text-danger"><%= errorMessage %></p>
+                    <% } %>
                 </label>
                 <label for="usuario">Usuario:
                     <input type="text" id="usuario" name="usuario" required >
                 </label>
                 <label for="contrasenia">Contraseña:
                     <input type="password" id="contrasenia" name="contrasenia" required >
-                    <p> <%= Error %> </p>
+                    <% if (errorMessage) { %>
+                    <p class="text-danger"><%= errorMessage %></p>
+                    <% } %>
                 </label>
                 <label for="cumpleanios">Fecha de Nacimiento:
                     <input type="date" id="cumpleanios" name="fecha_nacimiento" required>
