@@ -8,7 +8,10 @@ router.get('/login', usersController.login);
 router.post('/login', usersController.processLogin);
 
 router.get('/register', usersController.register);
-router.post('./newuser', usersController.processRegister);
+router.post('/register', usersController.processRegister);
+//router.post('./newuser', usersController.processRegister);
 
 router.get('/profile', usersController.profile);
+
+router.get('/logout', usersController.logout);
 module.exports = router;

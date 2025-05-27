@@ -29,18 +29,19 @@
         <nav class="main-navbar">
             <ul class="left-navbar">
                 <li><a href="/">Todos los productos</a></li>
-                <li><a href="/product/productAdd">Cargar productos</a></li>
+                <li><a href="/product/productAdd">Agregar producto</a></li>
+                <li><a href="/users/profile">Mi Perfil</a></li>
             </ul>
 
             <ul class="right-navbar">
                 <li><a href="/users">
-                    <%= usuario.nombre_usuario || usuario.usuario %>
+                    <h3><span>Hola, <%= usuario.usuario || usuario.nombre_usuario%>!</span></h3>
                     </a>
                 </li>
                 <li>
-                    <form action="/" method="get">
-                        <button class="logout" type="submit"> Cerrar sesión <i class="fas fa-sign-in-alt"></i></button>
-                    </form>
+                    <a href="/users/logout" class="logout">
+                        Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+                    </a>
                 </li>
             </ul>
                 <!-- Solo deslogueado <li>

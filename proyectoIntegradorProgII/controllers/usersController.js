@@ -6,11 +6,11 @@ const bcrypt = require('bcryptjs');
 
 const usersController = {
     profile: function (req, res) {
-        return res.render("profile", {data})
+        return res.render("profile", {usuario: req.session.usuarioLogged, data})
     },
     login: function (req, res) {
         if (req.session.usuarioLogged) {
-            return res.redirect('/profile');
+            return res.redirect('/users/profile');
         }
         return res.render('login', { message: null }); 
     },
@@ -32,7 +32,7 @@ const usersController = {
             if (usuario.contrasenia.startsWith('$2a$')) {
                 contraseniaOk = bcrypt.compareSync(contrasenia, usuario.contrasenia);
             } else {
-  // Si está en texto plano, comparamos directamente
+            // Si está en texto plano, comparamos directamente
             contraseniaOk = contrasenia === usuario.contrasenia;
             }
             if (!contraseniaOk) {
@@ -51,7 +51,7 @@ const usersController = {
                 res.cookie("usuarioEmail", usuario.email, { maxAge: 1000 * 60 * 60 * 24 * 30 })
             }
 
-            return res.redirect('/profile');
+            return res.redirect('/users/profile');
         })
         .catch(function(error) {
             console.log("Error en login:", error);
@@ -59,38 +59,43 @@ const usersController = {
         });
     },
     register: function (req, res) {
-        if (req.session.user != undefined) {
-            return res.redirect('/')
-        } else {
-            return res.render('register')
-        };
+        if (req.session.usuarioLogged) {
+            return res.redirect('/users/profile');
+        }
+        return res.render('register', { Error: null });
     },
     processRegister: async function (req, res) {
         if (req.body.contrasenia.length < 3) {
             return res.render('register', { Error: "La contraseña debe tener más de 3 caracteres" });
         }
-        db.user.findOne({
-            where: [{ email: req.body.email }]
+        const usuarioExistente = await db.usuario.findOne({
+            where: { email: req.body.email }
+        });
 
-        }).then(function (user) {
-            return res.render('register', { Error: "El mail ya esta registrado" })
-        })
-    
-        db.User.create({
-            usuario: req.body.usuario,
-            email: req.body.email,
-            contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
-            fecha_nacimiento: req.body.fecha_naciomiento,
-            dni: req.body.dni,
-            foto_perfil: req.body.foto_perfil
-        })
-            .then(function (user) {
-                return res.redirect('/user/profile');
-            })
-            .catch(function (error) {
-                return res.send("Ocurrió un error al crear el usuario.");
+        if (usuarioExistente) {
+            return res.render('register', { Error: "El mail ya fue registrado" });
+        }
+
+        try {
+            await db.usuario.create({
+                usuario: req.body.usuario,
+                email: req.body.email,
+                contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
+                fecha_nacimiento: req.body.fecha_nacimiento,
+                dni: req.body.dni,
+                foto_perfil: req.body.foto_perfil
             });
             
+            return res.redirect('/users/profile');
+        } catch (error) {
+            return res.send("Ocurrió un error al crear el usuario.");
+        }
     },
+    logout: function (req, res) {
+        res.clearCookie("usuarioEmail"); // borra la cookie de recordarme
+        req.session.destroy(() => {
+        res.redirect("/"); // redirecciona al home o donde prefieras
+    });
+}
 }
 module.exports = usersController;

@@ -3,7 +3,6 @@
 <%- include("./partials/head") %>
 <% if (isLogged) { %>
 	<%- include("./partials/headerLogueado") %>
-	<h3>Hola, <%= usuario.usuario %>!</h3>
 <% } else { %>
 	<%- include("./partials/header") %>
 <% } %>
@@ -12,9 +11,6 @@
 	<div class="banner">
 		<img src="images/banner.png" alt="Banner de ofertas">
 	</div>
-<% if (isLogged) { %>
-	<p>Hola, <%= usuario.nombre_usuario %>!</p>
-<% } %>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
