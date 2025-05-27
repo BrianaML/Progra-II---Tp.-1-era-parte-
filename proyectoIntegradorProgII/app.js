@@ -44,7 +44,7 @@ app.use(function userLoggedMiddleware(req, res, next) {
   }
 
   if (req.cookies.usuarioEmail) {
-    db.Usuario.findOne({ where: { email: req.cookies.usuarioEmail } })
+    db.usuario.findOne({ where: { email: req.cookies.usuarioEmail } })
       .then(usuario => {
         if (usuario) {
           req.session.usuarioLogged = {
@@ -65,6 +65,7 @@ app.use(function userLoggedMiddleware(req, res, next) {
 app.use('/', indexRouter);
 app.use("/product", productRouter)
 app.use("/users", usersRouter)
+app.use('/users', require('./routes/users'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
