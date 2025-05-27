@@ -69,28 +69,28 @@ const usersController = {
         if (req.body.contrasenia.length < 3) {
             return res.render('register', { Error: "La contraseña debe tener más de 3 caracteres" });
         }
+        db.user.findOne({
+            where: [{ email: req.body.email }]
 
-        const usuarioExistente = await db.usuario.findOne({
-            where: { email: req.body.email }
-        });
-
-        if (usuarioExistente) {
-            return res.render('register', { Error: "El mail ya está registrado" });
-        }
-
-        try {
-            await db.usuario.create({
-                usuario: req.body.usuario,
-                email: req.body.email,
-                contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
-                fecha_nacimiento: req.body.fecha_nacimiento,
-                dni: req.body.dni,
-                foto_perfil: req.body.foto_perfil
+        }).then(function (user) {
+            return res.render('register', { Error: "El mail ya esta registrado" })
+        })
+    
+        db.User.create({
+            usuario: req.body.usuario,
+            email: req.body.email,
+            contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
+            fecha_nacimiento: req.body.fecha_naciomiento,
+            dni: req.body.dni,
+            foto_perfil: req.body.foto_perfil
+        })
+            .then(function (user) {
+                return res.redirect('/user/profile');
+            })
+            .catch(function (error) {
+                return res.send("Ocurrió un error al crear el usuario.");
             });
-            return res.redirect('/users/profile');
-        } catch (error) {
-            return res.send("Ocurrió un error al crear el usuario.");
-        }
-}
+            
+    },
 }
 module.exports = usersController;
