@@ -2,6 +2,7 @@ const db = require('../database/models');
 const bcrypt = require('bcryptjs');
 
 const usersController = {
+    
     profile: function (req, res) {
         const usuario = req.session.usuarioLogged;
 
@@ -11,17 +12,18 @@ const usersController = {
         db.producto.findAll({
             where: { usuario_id: usuario.id }, include: [{ association: "comentarios" }]
         })
-            .then(function (productos) {
-                return res.render("profile", {
-                    usuario: usuario,
-                    data: { productos: productos }
-                });
-            })
-            .catch(function (error) {
-                console.error(error);
-                res.send("Error al cargar productos");
-            });
+        .then(function(productos) {
+            return res.render("profile", {
+                usuario: usuario,
+                data: { productos: productos }
+        });
+        })
+        .catch(function(error) {
+            console.error(error);
+            res.send("Error al cargar productos");
+        });
     },
+
     login: function (req, res) {
         return res.render('login', {
             emailIngresado: '',
@@ -81,6 +83,7 @@ const usersController = {
                 return res.send(error);
             });
     },
+    
     register: function (req, res) {
         if (req.session.usuario) {
             return res.redirect('/users/profile');
