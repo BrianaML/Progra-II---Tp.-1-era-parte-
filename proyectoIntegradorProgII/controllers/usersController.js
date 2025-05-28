@@ -6,7 +6,13 @@ const bcrypt = require('bcryptjs');
 
 const usersController = {
     profile: function (req, res) {
-        return res.render("profile", {usuario: req.session.usuarioLogged, data})
+
+        db.
+        console.log("Usuario en sesión:", req.session.usuarioLogged);
+        return res.render("profile", {
+            usuario: req.session.usuarioLogged,
+            data: {} // agregá lo que necesites, como productos, etc.
+  });
     },
     login: function (req, res) {
         if (req.session.usuarioLogged) {
@@ -44,7 +50,8 @@ const usersController = {
             req.session.usuarioLogged={
                 id: usuario.id,
                 email: usuario.email,
-                usuario: usuario.usuario
+                usuario: usuario.usuario,
+                foto_perfil: usuario.foto_perfil
             }
 
             if (recordarme){

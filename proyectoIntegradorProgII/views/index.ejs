@@ -21,9 +21,9 @@
 			<% for (let i=0; i<data.productos.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/product" <%= data.productos[i].id %>>
+						<a href="/product/<%= data.productos[i].id %>">
 							<figure class="product-box_image imgProd">
-								<img src="<%= data.productos[i].imagen %>" alt="<%= data.productos[i].descripcion %>">
+								<img src="/images/products/<%= data.productos[i].img_producto %>" alt="<%= data.productos[i].descripcion %>">
 							</figure>
 							<article class="product-box_data">
 								<h2><%= data.productos[i].nombre %></h2>
