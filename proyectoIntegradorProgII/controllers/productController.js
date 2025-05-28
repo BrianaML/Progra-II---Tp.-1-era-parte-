@@ -31,7 +31,7 @@ const productController = {
         const productoNuevo = {
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
-            imagen: req.body.imagen,
+            img_producto: req.body.img_producto,
             usuario_id: req.session.usuarioLogged.id ,
         };
         db.producto.create(productoNuevo)
