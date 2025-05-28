@@ -77,7 +77,7 @@ const usersController = {
             return res.redirect('/users/profile');
         })
         .catch(function(error) {
-            console.log("Error en login:", error);
+            console.log("Error en login:", Error);
             return res.send(error);
         });
     },
