@@ -1,7 +1,7 @@
 const { Op } = require('sequelize');
 const data = require('../db/index')
 const db = require('../database/models');
-//requerimos la base de datos
+
 const productController = {
     product: function (req, res) {
         let idProducto= req.params.id;
@@ -11,16 +11,16 @@ const productController = {
         include: [{ association: "usuario" }]
     }]
     })
-            .then (function(producto){
-                if (producto){
-                    res.render("product", {producto})
-                } else{
-                    res.status(404).send("Producto no encontrado");
-                }
-            })
-            .catch(function(error) {
-                res.status(500).send(error);
-            })
+    .then (function(producto){
+        if (producto){
+            res.render("product", {producto})
+        } else{
+            res.send("Producto no encontrado");
+        }
+    })
+    .catch(function(error) {
+        res.send(error);
+    })        
     },
     productAdd: function (req, res) {
         return res.render("productAdd", { data })

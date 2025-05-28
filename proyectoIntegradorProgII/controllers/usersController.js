@@ -115,9 +115,9 @@ const usersController = {
         }
     },
     logout: function (req, res) {
-        res.clearCookie("usuarioEmail"); // borra la cookie de recordarme
+        res.clearCookie("usuarioEmail"); 
         req.session.destroy(() => {
-        res.redirect("/"); // redirecciona al home o donde prefieras
+        res.redirect("/"); 
     });
 }
 }
