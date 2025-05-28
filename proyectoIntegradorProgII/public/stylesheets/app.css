@@ -115,8 +115,10 @@ hr {
   color: var(--gray);
   cursor: pointer;
 }
-
-
+/*====== header log Navbar ======*/
+.nombre-hl{
+  color: #f2d6ce;
+}
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
   background-color: var(--dark-blue);
@@ -497,7 +499,12 @@ hr {
   color: rgb(209, 0, 0);
   font-size: 1.4em;
 }
-
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
 textarea.form-input {
   min-height: 140px;
   resize: vertical;

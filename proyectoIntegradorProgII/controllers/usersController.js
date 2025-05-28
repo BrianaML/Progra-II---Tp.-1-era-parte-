@@ -1,7 +1,4 @@
-const { where } = require('sequelize');
-const data = require('../db/index')
 const db = require('../database/models');
-//requerimos la base de datos
 const bcrypt = require('bcryptjs');
 
 const usersController = {
@@ -26,36 +23,44 @@ const usersController = {
     });
     },
     login: function (req, res) {
-        if (req.session.usuarioLogged) {
-            return res.redirect('/users/profile');
-        }
-        return res.render('login', { message: null }); 
+        return res.render('login', {
+        emailIngresado: '',
+        emailError: null,
+        contraseniaError: null
+    });
     },
     processLogin:function (req, res) {
         
         let email= req.body.email;
         let contrasenia= req.body.contrasenia;
         let recordarme= req.body.recordarme === "on";
-        //a la base de datos utilzmaos su modelo con su alias definida y el find all hace un select*
+
         db.usuario.findOne({
             where: {email: email}
         })
         .then(function (usuario) {
             if (!usuario){
-                return res.render('login', { message: "El mail no esta registrado" });
+                return res.render('login', {
+                    emailError: "El email ingresado no está registrado",
+                    contraseniaError: null,
+                    emailIngresado: email
+                });
             }
 
-            //let contraseniaOk = bcrypt.compareSync(contrasenia, usuario.contrasenia);
+            let contraseniaOk;
+
             if (usuario.contrasenia.startsWith('$2a$')) {
                 contraseniaOk = bcrypt.compareSync(contrasenia, usuario.contrasenia);
             } else {
-            // Si está en texto plano, comparamos directamente
-            contraseniaOk = contrasenia === usuario.contrasenia;
+                contraseniaOk = contrasenia === usuario.contrasenia;
             }
+
             if (!contraseniaOk) {
-                console.log("Contraseña ingresada:", contrasenia);
-                console.log("Contraseña en base:", usuario.contrasenia);
-                return res.render("login", { message: "La contraseña es incorrecta" });
+                return res.render('login', {
+                    contraseniaError: "La contraseña es incorrecta",
+                    emailError: null,
+                    emailIngresado: email
+                });
             }
 
             req.session.usuarioLogged={
