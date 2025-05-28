@@ -70,14 +70,14 @@ const usersController = {
                 foto_perfil: usuario.foto_perfil
             }
 
-            if (recordarme){
-                res.cookie("usuarioEmail", usuario.email, { maxAge: 1000 * 60 * 60 * 24 * 30 })
-            }
+                if (recordarme) {
+                    res.cookie("usuarioEmail", usuario.email, { maxAge: 1000 * 60 * 60 * 24 * 30 })
+                }
 
             return res.redirect('/users/profile');
         })
         .catch(function(error) {
-            console.log("Error en login:", error);
+            console.log("Error en login:", Error);
             return res.send(error);
         });
     },
@@ -87,6 +87,8 @@ const usersController = {
         }
         return res.render('register', { Error: null });
     },
+
+
     processRegister: async function (req, res) {
         if (req.body.contrasenia.length < 3) {
             return res.render('register', { Error: "La contraseña debe tener más de 3 caracteres" });
