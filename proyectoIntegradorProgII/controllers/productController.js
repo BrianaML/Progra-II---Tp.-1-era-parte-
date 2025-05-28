@@ -22,9 +22,27 @@ const productController = {
         res.send(error);
     })        
     },
+    
     productAdd: function (req, res) {
         return res.render("productAdd", { data })
     },
+
+    productCreate: function(req, res){
+        const productoNuevo = {
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            imagen: req.body.imagen,
+            usuario_id: req.session.usuarioLogged.id ,
+        };
+        db.producto.create(productoNuevo)
+            .then(function () {
+                res.redirect("/users/profile"); 
+            })
+            .catch(function () {
+                res.send("Error al crear el producto");
+            });
+    },
+
     searchResults: function (req, res) {
         let searchQuery = req.query.search;
 
