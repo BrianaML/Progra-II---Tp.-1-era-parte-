@@ -2,7 +2,6 @@
 <html lang="es">
 <%- include("./partials/head") %>
 <% if (isLogged) { %>
-	<p>Hola, <%= usuario.usuario %>!</p>
 	<%- include("./partials/headerLogueado") %>
 <% } else { %>
 	<%- include("./partials/header") %>
@@ -12,9 +11,6 @@
 	<div class="banner">
 		<img src="images/banner.png" alt="Banner de ofertas">
 	</div>
-<% if (isLogged) { %>
-	<p>Hola, <%= usuario.nombre_usuario %>!</p>
-<% } %>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -25,7 +21,7 @@
 			<% for (let i=0; i<data.productos.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/product">
+						<a href="/product" <%= data.productos[i].id %>>
 							<figure class="product-box_image imgProd">
 								<img src="<%= data.productos[i].imagen %>" alt="<%= data.productos[i].descripcion %>">
 							</figure>

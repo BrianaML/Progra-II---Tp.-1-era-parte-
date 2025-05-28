@@ -1,6 +1,5 @@
 <%- include("./partials/head") %>
 <% if (isLogged) { %>
-    <p>Hola, <%= usuario.usuario %>!</p>
     <%- include("./partials/headerLogueado") %>
 <% } else { %>
     <%- include("./partials/header") %>
@@ -13,7 +12,7 @@
         </div>
         <!-- Show the "ultimos" products -->
         <h2 class="col-12 form_container">
-            <form action="/users/profile" method="post">
+            <form action="/users/register" method="post">
                 <label for="email">Email: 
                     <input type="email" id="email" name="email" required>
                     <% if (errorMessage) { %>
