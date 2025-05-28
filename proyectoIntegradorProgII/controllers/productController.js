@@ -1,9 +1,26 @@
 const { Op } = require('sequelize');
 const data = require('../db/index')
-
+const db = require('../database/models');
+//requerimos la base de datos
 const productController = {
     product: function (req, res) {
-        return res.render("product", { data })
+        let idProducto= req.params.id;
+
+        db.producto.findByPk(idProducto, {
+        include: [{ association: "comentarios",
+        include: [{ association: "usuario" }]
+    }]
+    })
+            .then (function(producto){
+                if (producto){
+                    res.render("product", {producto})
+                } else{
+                    res.status(404).send("Producto no encontrado");
+                }
+            })
+            .catch(function(error) {
+                res.status(500).send(error);
+            })
     },
     productAdd: function (req, res) {
         return res.render("productAdd", { data })

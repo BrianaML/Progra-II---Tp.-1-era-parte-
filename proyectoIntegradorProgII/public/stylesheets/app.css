@@ -115,8 +115,10 @@ hr {
   color: var(--gray);
   cursor: pointer;
 }
-
-
+/*====== header log Navbar ======*/
+.nombre-hl{
+  color: #f2d6ce;
+}
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
   background-color: var(--dark-blue);
@@ -404,6 +406,42 @@ hr {
   padding: 15px 30px;
   margin-top: 15px;
 }
+.button-p{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+.button-p:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+.button-p:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.button-p:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.button-p:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
 
 .action-button.edit {
   background-color: chocolate;
@@ -461,7 +499,12 @@ hr {
   color: rgb(209, 0, 0);
   font-size: 1.4em;
 }
-
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
 textarea.form-input {
   min-height: 140px;
   resize: vertical;

@@ -8,12 +8,12 @@
 <section class="info-usuario container products-wrapper">
     <div class="row">
         <div class="img-container offset-3 col-2">
-            <img src= "/images/<%= usuario.foto_perfil %>"  alt="foto de perfil" class="foto-perfil">
+            <img src="/images/users/<%= usuario.foto_perfil || 'default-image.png'%>" alt="<%= usuario.foto_perfil %>" class="foto-perfil">
         </div>
         <div class="data-container col-6">
             <div class="d-flex align-items-center ">
-                <h1 class="main-title"> <%= locals.usuario.usuario %>
-                    <a href="/profile">
+                <h1 class="main-title"> <%= usuario.usuario %>
+                    <a href="/users/profile">
                         <i class="fas fa-cog"></i>
                     </a>
                 </h1>
@@ -21,7 +21,7 @@
             </div>
             <div>
                 <ul class="">
-                    <li>8 productos</li>
+                    <li><%= data.productos.length %> productos</li>
                     <li>200 seguidores</li>
                     <li>300 comentarios</li>
                 </ul>
@@ -38,20 +38,26 @@
                 <h2 class="products-title">Mis productos</h2>
             </div>
             <!-- Show mis productos -->
-            <% for (let i=0; i<data.productos.length; i++) { %>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <section class="product-box">
-                        <a href="/product">
-                            <figure class="product-box_image imgProd">
-                                <img src="<%= data.productos[i].imagen %>" alt="<%= data.productos[i].descripcion %>">
-                            </figure>
-                            <article class="product-box_data">
-                                <h2><%= data.productos[i].nombre %></h2>
-                                <p><%= data.productos[i].descripcion %></p>
-                                <p>Comentarios: <%= data.productos[i].comentarios.length %></p>
-                            </article>
-                        </a>
-                    </section>
+            <% if (data.productos.length > 0) { %>
+                <% for (let i = 0; i < data.productos.length; i++) { %>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <section class="product-box">
+                            <a href="/product/<%= data.productos[i].id %>">
+                                <figure class="product-box_image imgProd">
+                                    <img src="/images/products/<%= data.productos[i].img_producto %>" alt="<%= data.productos[i].descripcion %>">
+                                </figure>
+                                <article class="product-box_data">
+                                    <h2><%= data.productos[i].nombre %></h2>
+                                    <p><%= data.productos[i].descripcion %></p>
+                                    <p>Comentarios: <%= data.productos[i].comentarios.length %></p>
+                                </article>
+                            </a>
+                        </section>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <div class="col-12">
+                    <h2 class="text-center">Todavía no cargaste ningún producto.</h2>
                 </div>
             <% } %>
         </div>

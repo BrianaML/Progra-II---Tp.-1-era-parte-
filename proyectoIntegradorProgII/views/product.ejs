@@ -8,38 +8,55 @@
 <!-- product detail -->
 <div class="container products-wrapper">
     <div class="d-flex align-items-center">
-        <h2 class="products-title"><%= data.productos[0].nombre %></h2> 
-        <p class="product-detail-description">
-            <a href="/product/productAdd">Editar</a>
-        </p>
+        <h2 class="products-title"><%= producto.nombre %></h2> 
+        <% if (isLogged) { %>
+            <p class="product-detail-description">
+                <a href="/product/productAdd">Editar</a>
+            </p>
+        <% } %>
     </div>
     <div class="product-detail">
         <div class="row">
                 <article class="col-12 col-lg-8 product-detail-info">
-                    <img src="<%= data.productos[0].imagen %>" alt="" class="product-detail-img">
-                    <p class="product-detail-description"> <%= data.productos[0].descripcion %></p>
+                    <img src="/images/products/<%= producto.img_producto%>" alt="<%= producto.descripcion %>" class="product-detail-img">
+                    <p class="product-detail-description"> <%= producto.descripcion %></p>
                 </article>
             <div class="col-12 col-lg-4">
                 <section class="comments">
-                    <% for (let i = 0; i < data.productos[0].comentarios.length; i++) { %>
-                        <article>
-                            <img src="<%= data.productos[0].comentarios[i].imagen_perfil %>" alt="">
-                            <div class="data">
-                                <p class="user"> 
-                                    <strong><a href="/users/profile"></a> <%= data.productos[0].comentarios[i].nombre_usuario %></strong>
-                                </p>
-                                <p><%= data.productos[0].comentarios[i].texto %></p>
-                            </div>
-                        </article>
+                    <% if (producto.comentarios && producto.comentarios.length > 0) { %>
+                        <% for (let i = 0; i < producto.comentarios.length; i++) { %>
+                            <article>
+                                <img src="/images/users/<%= producto.comentarios[i].usuario?.foto_perfil || '/images/default-user.png' %>" alt="Foto de perfil" class="comment-user-img">
+                                <div class="data">
+                                    <p class="user"> 
+                                        <strong>
+                                            <a href="/users/profile/<%= producto.comentarios[i].usuario_id %>">
+                                                <%= producto.comentarios[i].usuario?.usuario || 'Usuario Anónimo' %>
+                                            </a>
+                                        </strong>
+                                    </p>
+                                    <p><%= producto.comentarios[i].texto %></p>
+                                </div>
+                            </article>
+                        <% } %>
+                    <% } else { %>
+                        <p>No hay comentarios aún.</p>
                     <% } %>
                 </section>
 
-                <form class="form" action="/" method="get">
-                    <label for="comentarioAdd">
-                        <input class="form-input" type="text" value="" placeholder="Agregar comentario" required>
-                    </label>
-                    <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-                </form>
+                <% if (isLogged) { %>
+                    <form class="form" action="/comentarios/agregar" method="post">
+                        <label for="comentarioAdd">
+                            <input class="form-input" type="text" name="texto" placeholder="Agregar comentario" required>
+                        </label>
+                        <input type="hidden" name="producto_id" value="<%= producto.id %>">
+                        <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                    </form>
+                <% } else { %>
+                    <div class="form">
+                        <button class="form-input button-p"><a href="/users/login">Inicia sesión para agregar comentarios.</a></button>
+                    </div>
+                <% } %>
                 <hr>
             </div>
         </div>

@@ -1,50 +1,74 @@
-const data = require('../db/index')
 const db = require('../database/models');
-//requerimos la base de datos
 const bcrypt = require('bcryptjs');
 
 const usersController = {
     profile: function (req, res) {
-        return res.render("profile", {usuario: req.session.usuarioLogged, data})
+        const usuario= req.session.usuarioLogged;
+
+        if (!usuario) {
+            return res.redirect('/users/login');
+        }
+        db.producto.findAll({
+            where: { usuario_id: usuario.id }, include: [{ association: "comentarios" }]
+        })
+        .then(function(productos) {
+            return res.render("profile", {
+                usuario: usuario,
+                data: { productos: productos }
+        });
+        })
+        .catch(function(error) {
+            console.error(error);
+            res.send("Error al cargar productos");
+    });
     },
     login: function (req, res) {
-        if (req.session.usuarioLogged) {
-            return res.redirect('/users/profile');
-        }
-        return res.render('login', { message: null }); 
+        return res.render('login', {
+        emailIngresado: '',
+        emailError: null,
+        contraseniaError: null
+    });
     },
     processLogin:function (req, res) {
         
         let email= req.body.email;
         let contrasenia= req.body.contrasenia;
         let recordarme= req.body.recordarme === "on";
-        //a la base de datos utilzmaos su modelo con su alias definida y el find all hace un select*
+
         db.usuario.findOne({
             where: {email: email}
         })
-            .then(function (usuario) {
-                if (!usuario) {
-                    return res.render('login', { message: "El mail no esta registrado" });
-                }
+        .then(function (usuario) {
+            if (!usuario){
+                return res.render('login', {
+                    emailError: "El email ingresado no está registrado",
+                    contraseniaError: null,
+                    emailIngresado: email
+                });
+            }
 
-            //let contraseniaOk = bcrypt.compareSync(contrasenia, usuario.contrasenia);
+            let contraseniaOk;
+
             if (usuario.contrasenia.startsWith('$2a$')) {
                 contraseniaOk = bcrypt.compareSync(contrasenia, usuario.contrasenia);
             } else {
-            // Si está en texto plano, comparamos directamente
-            contraseniaOk = contrasenia === usuario.contrasenia;
-            }
-            if (!contraseniaOk) {
-                console.log("Contraseña ingresada:", contrasenia);
-                console.log("Contraseña en base:", usuario.contrasenia);
-                return res.render("login", { message: "La contraseña es incorrecta" });
+                contraseniaOk = contrasenia === usuario.contrasenia;
             }
 
-                req.session.usuarioLogged = {
-                    id: usuario.id,
-                    email: usuario.email,
-                    usuario: usuario.usuario
-                }
+            if (!contraseniaOk) {
+                return res.render('login', {
+                    contraseniaError: "La contraseña es incorrecta",
+                    emailError: null,
+                    emailIngresado: email
+                });
+            }
+
+            req.session.usuarioLogged={
+                id: usuario.id,
+                email: usuario.email,
+                usuario: usuario.usuario,
+                foto_perfil: usuario.foto_perfil
+            }
 
                 if (recordarme) {
                     res.cookie("usuarioEmail", usuario.email, { maxAge: 1000 * 60 * 60 * 24 * 30 })
