@@ -11,12 +11,15 @@
             <h2 class="products-title">Resultados de búsqueda</h2>
         </div>
         <!-- Show the "ultimos" products -->
-        <% for (let i=0; i<data.productos.length; i++) { %>
+        <% if (productos.length === 0) {
+            <p> no se encontraron sesultados de tu busqueda</p>
+        } %>
+        <% for (let i=0; i < productos.length; i++) { %>
             <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
                     <a href="/product/<%= data.productos[i].id %>">
                         <figure class="product-box_image imgProd">
-                            <img src="<%= data.productos[i].imagen %>" alt="<%= data.productos[i].descripcion %>">
+                            <img src="/images/products/<%= data.productos[i].imagen %>" alt="<%= data.productos[i].descripcion %>">
                         </figure>
                         <article class="product-box_data">
                             <h2><%= data.productos[i].nombre %></h2>
