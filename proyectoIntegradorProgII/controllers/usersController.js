@@ -6,13 +6,24 @@ const bcrypt = require('bcryptjs');
 
 const usersController = {
     profile: function (req, res) {
+        const usuario= req.session.usuarioLogged;
 
-        db.
-        console.log("Usuario en sesión:", req.session.usuarioLogged);
-        return res.render("profile", {
-            usuario: req.session.usuarioLogged,
-            data: {} // agregá lo que necesites, como productos, etc.
-  });
+        if (!usuario) {
+            return res.redirect('/users/login');
+        }
+        db.producto.findAll({
+            where: { usuario_id: usuario.id }, include: [{ association: "comentarios" }]
+        })
+        .then(function(productos) {
+            return res.render("profile", {
+                usuario: usuario,
+                data: { productos: productos }
+        });
+        })
+        .catch(function(error) {
+            console.error(error);
+            res.send("Error al cargar productos");
+    });
     },
     login: function (req, res) {
         if (req.session.usuarioLogged) {
