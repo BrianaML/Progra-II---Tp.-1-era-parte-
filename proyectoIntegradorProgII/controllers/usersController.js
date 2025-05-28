@@ -2,6 +2,7 @@ const db = require('../database/models');
 const bcrypt = require('bcryptjs');
 
 const usersController = {
+    
     profile: function (req, res) {
         const usuario= req.session.usuarioLogged;
 
@@ -20,15 +21,17 @@ const usersController = {
         .catch(function(error) {
             console.error(error);
             res.send("Error al cargar productos");
-    });
+        });
     },
+
     login: function (req, res) {
         return res.render('login', {
         emailIngresado: '',
         emailError: null,
         contraseniaError: null
-    });
+        });
     },
+    
     processLogin:function (req, res) {
         
         let email= req.body.email;
@@ -81,13 +84,13 @@ const usersController = {
             return res.send(error);
         });
     },
+    
     register: function (req, res) {
         if (req.session.usuarioLogged) {
             return res.redirect('/users/profile');
         }
         return res.render('register', { Error: null });
     },
-
 
     processRegister: async function (req, res) {
         if (req.body.contrasenia.length < 3) {
@@ -116,11 +119,13 @@ const usersController = {
             return res.send("Ocurrió un error al crear el usuario.");
         }
     },
+
     logout: function (req, res) {
         res.clearCookie("usuarioEmail"); 
         req.session.destroy(() => {
         res.redirect("/"); 
-    });
+        });
+    },
 }
-}
+
 module.exports = usersController;

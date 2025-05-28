@@ -43,6 +43,25 @@ const productController = {
             });
     },
 
+    agregarComentario: function (req, res) {
+        if (!req.session.usuarioLogged) {
+            return res.redirect("/users/login");
+        }
+        const comentarioNuevo = {
+            texto: req.body.texto,
+            usuario_id: req.session.usuarioLogged.id,
+            producto_id: req.body.producto_id,
+            created_at: new Date()
+        };
+        db.comentario.create(comentarioNuevo)
+            .then(function () {
+                res.redirect("/product/" + req.body.producto_id);
+            })
+            .catch(function (error) {
+                res.send("Error al agregar comentario.");
+            });
+    },
+
     searchResults: function (req, res) {
         let searchQuery = req.query.search;
 
