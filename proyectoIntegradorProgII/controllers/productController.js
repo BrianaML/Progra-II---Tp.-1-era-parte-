@@ -1,9 +1,7 @@
 const { Op } = require('sequelize');
 const data = require('../db/index')
 const db = require('../database/models');
-//const Op = db.sequelize.Op;
 
-//requerimos la base de datos
 const productController = {
     product: function (req, res) {
         let idProducto= req.params.id;
@@ -26,7 +24,7 @@ const productController = {
     },
     
     productAdd: function (req, res) {
-        return res.render("productAdd", { data })
+        return res.render("productAdd", {data})
     },
 
     productCreate: function(req, res){
@@ -66,16 +64,18 @@ const productController = {
     searchResults: function (req, res) {
         let searchQuery = req.query.search;
 
-        db.Producto.findAll({
+        db.producto.findAll({
             where: {
                 nombre: { [Op.like]: `%${searchQuery}%` }
             }
         })
             .then(function (resultados) {
+                console.log("resultdo");
+                
                 res.render("searchResults", {resultados,searchQuery});
             })
             .catch(function (error) {
-                res.send(error);
+                res.send( error);
             });
     },
 }

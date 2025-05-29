@@ -5,27 +5,34 @@
     <%- include("./partials/header") %>
 <% } %>
 
+<% if (searchQuery) { %>
+    <h1>Resultados de búsqueda para: "<%= searchQuery %>"</h1>
+<% } %>
 
-<% if (productos.length === 0) { %>
+<% if (resultados && resultados.length === 0) { %> 
     <p>No se encontraron resultados de tu búsqueda.</p>
-<% } else { %>
-    <% for (let i = 0; i < productos.length; i++) { %>
+
+<% } else if (resultados && resultados.length > 0) { %>
+    <div class="row"> 
+    <% for (let i = 0; i < resultados.length; i++) { %> 
+        <% let producto = resultados[i]; %> 
         <div class="col-12 col-sm-6 col-lg-3">
             <section class="product-box">
-                <a href="/product/<%= productos[i].id %>">
+                <a href="/product/<%= producto.id %>"> 
                     <figure class="product-box_image imgProd">
-                        <img src="/images/products/<%= productos[i].imagen %>" alt="<%= productos[i].descripcion %>">
+                        <img src="/images/products/<%= producto.img_producto %>" alt="<%= producto.descripcion %>">
+                    </figure>
                     </figure>
                     <article class="product-box_data">
-                        <h2><%= productos[i].nombre %></h2>
-                        <p><%= productos[i].descripcion %></p>
-                        <p>Comentarios: <%= productos[i].comentarios.length %></p>
+                        <h2><%= producto.nombre %></h2>
+                        <p><%= producto.descripcion %></p>
+                        <p>Comentarios: <%= producto.comentarios %></p>
                     </article>
                 </a>
             </section>
         </div>
     <% } %>
-<% } %>
-
-
-<%- include("./partials/footer") %>
+    </div>
+<% } else { %>
+    <p>Ocurrió un error al cargar los resultados o no se realizó una búsqueda.</p>
+<%}%>
