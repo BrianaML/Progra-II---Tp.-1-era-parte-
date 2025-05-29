@@ -53,7 +53,6 @@ const productController = {
             texto: req.body.texto,
             usuario_id: req.session.usuarioLogged.id,
             producto_id: req.body.producto_id,
-            created_at: new Date()
         };
         db.comentario.create(comentarioNuevo)
             .then(function () {
