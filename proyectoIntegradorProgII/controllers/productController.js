@@ -1,7 +1,7 @@
 const { Op } = require('sequelize');
 const data = require('../db/index')
 const db = require('../database/models');
-const Op = db.sequelize.Op;
+//const Op = db.sequelize.Op;
 
 //requerimos la base de datos
 const productController = {
@@ -78,8 +78,6 @@ const productController = {
             .catch(function (error) {
                 res.send(error);
             });
-
-        return res.render("searchResults", { data })
     },
 }
 
