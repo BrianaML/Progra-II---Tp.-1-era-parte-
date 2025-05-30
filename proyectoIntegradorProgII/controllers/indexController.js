@@ -1,4 +1,3 @@
-const data = require('../db/index')
 const db = require("../database/models")
 
 const indexController ={
@@ -8,7 +7,7 @@ const indexController ={
             {association: "usuario"}]
     })
     .then(function(productos) {
-        res.render('index', { data: { productos } });
+        res.render('index', { productos });
     })
     .catch(function(error) {
         res.send(error);

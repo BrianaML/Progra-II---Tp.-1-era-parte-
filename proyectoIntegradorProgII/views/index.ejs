@@ -18,19 +18,24 @@
 				<h2 class="products-title">Productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<% for (let i=0; i<data.productos.length; i++) { %>
+			<% for (let i=0; i<productos.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/product/<%= data.productos[i].id %>">
+						<a href="/product/<%= productos[i].id %>">
 							<figure class="product-box_image imgProd">
-								<img src="/images/products/<%= data.productos[i].img_producto %>" alt="<%= data.productos[i].descripcion %>">
+								<img src="/images/products/<%= productos[i].img_producto %>" alt="<%= productos[i].descripcion %>">
 							</figure>
-							<article class="product-box_data">
-								<h2><%= data.productos[i].nombre %></h2>
-								<p><%= data.productos[i].descripcion %></p>
-								<p>Comentarios: <%= data.productos[i].comentarios.length %></p>
-							</article>
 						</a>
+							<article class="product-box_data">
+								<h2><%= productos[i].nombre %></h2>
+								<p><%= productos[i].descripcion %></p>
+								<% if (productos[i].usuario) { %>
+									<p>Subido por: <a class="user-i" href="/users/profile/<%= productos[i].usuario.id %>"><%= productos[i].usuario.usuario %></a></p>
+								<% } else { %>
+									<p>Subido por: <i>Usuario eliminado</i></p>
+								<% } %>
+								<p>Comentarios: <%= productos[i].comentarios.length %></p>
+							</article>
 					</section>
 				</div>
 			<% } %>

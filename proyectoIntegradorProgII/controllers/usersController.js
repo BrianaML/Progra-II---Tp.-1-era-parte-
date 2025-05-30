@@ -24,6 +24,27 @@ const usersController = {
         });
     },
 
+    profileId:function (req, res) {
+        const id= req.params.id;
+
+        db.usuario.findByPk(id, {
+            include:[{association: "productos"}]
+        })
+        .then(function (usuario) {
+            if (!usuario){
+                return res.send("Usuario no encontrado")
+            }
+            
+            res.render("profile", {
+                usuario: usuario,
+                productos: usuario.productos
+            });
+        })
+        .catch(function (error) {
+            res.send("Error al cargar perfil del usuario")
+        })
+    },
+
     login: function (req, res) {
         return res.render('login', {
             emailIngresado: '',
@@ -127,13 +148,13 @@ const usersController = {
             console.error(error);
             return res.render('register', { Error: "Error inesperado al registrar. Revisá los datos." });
         });
-},
+    },
 
-        logout: function (req, res) {
-            res.clearCookie('usuarioEmail');
-            req.session.destroy();
-            return res.redirect('/');
-            ;
-        }
+    logout: function (req, res) {
+        res.clearCookie('usuarioEmail');
+        req.session.destroy();
+        return res.redirect('/');
     }
+}
+
 module.exports = usersController;

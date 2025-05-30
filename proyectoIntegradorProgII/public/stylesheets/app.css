@@ -190,10 +190,6 @@ hr {
   margin: 20px 0;
 }
 
-.product-box a {
-  display: block;
-}
-
 .product-box_image {
   border-bottom: 1px solid var(--light-gray);
 }
@@ -263,6 +259,10 @@ hr {
 .product-box:hover i {
   transform: rotate(360deg);
   box-shadow: 0 0 5px var(--green);
+}
+
+.user-i{
+  font-weight: 600;
 }
 
 /*====== Footer ======*/
