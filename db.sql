@@ -112,4 +112,4 @@ VALUES
 -- Producto 10
 (DEFAULT, "Me encanta el diseño grueso, son distintas a todo.", '2025-04-07 12:00:00', '2025-04-07 12:00:00', NULL, 1, 10),
 (DEFAULT, "Siento que suman un montón de estilo.", '2025-04-07 12:01:00', '2025-04-07 12:01:00', NULL, 3, 10),
-(DEFAULT, "Súper originales, no se ven mucho.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 2, 10);
+(DEFAULT, "Súper originales, no se ven mucho.", '2025-04-07 12:02:00', '2025-04-07 12:02:00', NULL, 2, 10);

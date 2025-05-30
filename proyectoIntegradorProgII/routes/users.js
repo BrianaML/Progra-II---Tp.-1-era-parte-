@@ -9,7 +9,6 @@ router.post('/login', usersController.processLogin);
 
 router.get('/register', usersController.register);
 router.post('/register', usersController.processRegister);
-//router.post('./newuser', usersController.processRegister);
 
 router.get('/profile', usersController.profile);
 
