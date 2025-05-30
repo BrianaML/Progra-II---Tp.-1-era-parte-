@@ -9,13 +9,18 @@ const usersController = {
         if (!usuario) {
             return res.redirect('/users/login');
         }
-        db.producto.findAll({
-            where: { usuario_id: usuario.id }, include: [{ association: "comentarios" }]
+
+        db.producto.findAll({ 
+            where: { usuario_id : usuario.id }, 
+            include: [{
+                association: "comentarios",
+                required: false
+            }] 
         })
         .then(function(productos) {
             return res.render("profile", {
                 usuario: usuario,
-                data: { productos: productos }
+                productos: productos
         });
         })
         .catch(function(error) {
@@ -28,7 +33,12 @@ const usersController = {
         const id= req.params.id;
 
         db.usuario.findByPk(id, {
-            include:[{association: "productos"}]
+            include:[{ association: "productos",
+                include: [{
+                    association: "comentarios",
+                    required: false
+                }]
+            }]
         })
         .then(function (usuario) {
             if (!usuario){
@@ -41,6 +51,7 @@ const usersController = {
             });
         })
         .catch(function (error) {
+            console.error(error);
             res.send("Error al cargar perfil del usuario")
         })
     },
