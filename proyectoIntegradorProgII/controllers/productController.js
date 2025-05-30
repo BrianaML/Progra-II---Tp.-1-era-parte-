@@ -4,39 +4,40 @@ const db = require('../database/models');
 
 const productController = {
     product: function (req, res) {
-        let idProducto= req.params.id;
+        let idProducto = req.params.id;
 
         db.producto.findByPk(idProducto, {
-        include: [{ association: "comentarios",
-        include: [{ association: "usuario" }]
-    }]
-    })
-    .then (function(producto){
-        if (producto){
-            res.render("product", {producto})
-        } else{
-            res.send("Producto no encontrado");
-        }
-    })
-    .catch(function(error) {
-        res.send(error);
-    })        
-    },
-    
-    productAdd: function (req, res) {
-        return res.render("productAdd", {data})
+            include: [{
+                association: "comentarios",
+                include: [{ association: "usuario" }]
+            }]
+        })
+            .then(function (producto) {
+                if (producto) {
+                    res.render("product", { producto })
+                } else {
+                    res.send("Producto no encontrado");
+                }
+            })
+            .catch(function (error) {
+                res.send(error);
+            })
     },
 
-    productCreate: function(req, res){
+    productAdd: function (req, res) {
+        return res.render("productAdd", { data })
+    },
+
+    productCreate: function (req, res) {
         const productoNuevo = {
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             img_producto: req.body.img_producto,
-            usuario_id: req.session.usuarioLogged.id ,
+            usuario_id: req.session.usuarioLogged.id,
         };
         db.producto.create(productoNuevo)
             .then(function () {
-                res.redirect("/users/profile"); 
+                res.redirect("/users/profile");
             })
             .catch(function () {
                 res.send("Error al crear el producto");
@@ -63,20 +64,20 @@ const productController = {
 
     searchResults: function (req, res) {
         let searchQuery = req.query.search;
-
         db.producto.findAll({
             where: {
                 nombre: { [Op.like]: `%${searchQuery}%` }
             }
         })
             .then(function (resultados) {
-                console.log("resultdo");
-                
-                res.render("searchResults", {resultados,searchQuery});
+                console.log("resultado");
+
+                res.render("searchResults", { resultados, searchQuery });
             })
             .catch(function (error) {
-                res.send( error);
+                res.send(error);
             });
+        
     },
 }
 
