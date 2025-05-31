@@ -68,10 +68,7 @@ const productController = {
             where: {
                 nombre: { [Op.like]: `%${searchQuery}%` }
             },
-            include: [
-                    { association: 'usuario' },
-                    { association: 'comentarios' }
-                ]
+
         })
             .then(function (resultados) {
                 console.log("resultado");

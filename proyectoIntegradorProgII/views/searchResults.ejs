@@ -26,7 +26,12 @@
                     <article class="product-box_data">
                         <h2><%= producto.nombre %></h2>
                         <p><%= producto.descripcion %></p>
-                        <p>Comentarios: <%=  %></p>
+                        <% if (producto.usuario) { %>
+							<p>Subido por: <a class="user-i" href="/users/profile/<%= producto.usuario.id %>"> <%= producto.usuario.usuario %></a> </p>
+						<% } else { %>
+							<p>Subido por: <i>Usuario eliminado</i></p>
+						<% } %>
+                        <p>Comentarios: <%= producto.comentarios.length %></p>
                     </article>
                 </a>
             </section>
