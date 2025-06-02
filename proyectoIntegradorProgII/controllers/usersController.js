@@ -81,13 +81,7 @@ const usersController = {
                 });
             }
 
-        let contraseniaOk;
-
-        if (usuario.contrasenia.startsWith('$2a$')) {
-            contraseniaOk = bcrypt.compareSync(contrasenia, usuario.contrasenia);
-        } else {
-            contraseniaOk = contrasenia === usuario.contrasenia;
-        }
+        let contraseniaOk = bcrypt.compareSync(contrasenia, usuario.contrasenia);
 
         if (!contraseniaOk) {
             return res.render('login', {
@@ -127,7 +121,7 @@ const usersController = {
     let contrasenia = req.body.contrasenia;
 
     if (contrasenia.length < 3) {
-        return res.render('register', { Error: "La contraseña debe tener más de 3 caracteres" });
+        return res.render('register', { Error: "Ocurrió un error, el mail ya está registrado o la contraseña es menor a 3 caracteres" });
     }
 
     db.usuario.findOne({
@@ -135,13 +129,15 @@ const usersController = {
     })
         .then(function (usuarioExistente) {
             if (usuarioExistente) {
-                return res.render('register', { Error: "El mail ya está registrado" });
+                return res.render('register', { Error: "Ocurrió un error, el mail ya está registrado o la contraseña es menor a 3 caracteres" });
             }
+
+            let passEncriptada = bcrypt.hashSync(req.body.contrasenia, 10)
 
             return db.usuario.create({
                 usuario: req.body.usuario,
                 email: req.body.email,
-                contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
+                contrasenia: passEncriptada,
                 fecha_nacimiento: req.body.fecha_nacimiento,
                 dni: req.body.dni,
                 foto_perfil: req.body.foto_perfil || 'default-image.png'

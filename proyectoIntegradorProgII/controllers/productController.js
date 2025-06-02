@@ -24,7 +24,7 @@ const productController = {
     },
 
     productAdd: function (req, res) {
-        return res.render("productAdd", { data })
+        return res.render("productAdd")
     },
 
     productCreate: function (req, res) {

@@ -13,16 +13,15 @@
         <!-- Show the "ultimos" products -->
         <h2 class="col-12 form_container">
             <form action="/users/register" method="post">
+                <p class="error-message"> <%= Error %></p>
                 <label for="email">Email: 
                     <input type="email" id="email" name="email" required>
-                        <p> <%= Error %></p>
                 </label>
                 <label for="usuario">Usuario:
                     <input type="text" id="usuario" name="usuario" required >
                 </label>
                 <label for="contrasenia">Contraseña:
                     <input type="password" id="contrasenia" name="contrasenia" required >
-                        <p> <%= Error %></p>
                 </label>
                 <label for="cumpleanios">Fecha de Nacimiento:
                     <input type="date" id="cumpleanios" name="fecha_nacimiento" required>

@@ -10,7 +10,7 @@
 <% } %>
 
 <% if (resultados && resultados.length === 0) { %> 
-    <p>No se encontraron resultados de tu búsqueda.</p>
+    <p class="paddingError">No se encontraron resultados de tu búsqueda.</p>
 
 <% } else if (resultados && resultados.length > 0) { %>
     <div class="row"> 
@@ -27,7 +27,7 @@
                         <h2><%= producto.nombre %></h2>
                         <p><%= producto.descripcion %></p>
                         <% if (producto.usuario) { %>
-							<p>Subido por: <a class="user-i" href="/users/profile/<%= producto.usuario.id %>"> <%= producto.usuario.usuario %></a> </p>
+							<p>Subido por: <a class="user-i" href="/users/profile/<%= producto.usuario.id %>"> <%= producto.usuario.usuario %></a></p>
 						<% } else { %>
 							<p>Subido por: <i>Usuario eliminado</i></p>
 						<% } %>
@@ -41,3 +41,5 @@
 <% } else { %>
     <p>Ocurrió un error al cargar los resultados o no se realizó una búsqueda.</p>
 <%}%>
+
+<%- include("./partials/footer") %>

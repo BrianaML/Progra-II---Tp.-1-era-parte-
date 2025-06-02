@@ -169,6 +169,11 @@ hr {
   height: 100px;
 }
 
+/*====== Search Results ======*/
+.paddingError {
+  font-size: 17px;
+  margin: 20px;
+}
 
 /*====== Products ======*/
 .products-wrapper {
