@@ -81,39 +81,39 @@ const usersController = {
                 });
             }
 
-                let contraseniaOk;
+        let contraseniaOk;
 
-                if (usuario.contrasenia.startsWith('$2a$')) {
-                    contraseniaOk = bcrypt.compareSync(contrasenia, usuario.contrasenia);
-                } else {
-                    contraseniaOk = contrasenia === usuario.contrasenia;
-                }
+        if (usuario.contrasenia.startsWith('$2a$')) {
+            contraseniaOk = bcrypt.compareSync(contrasenia, usuario.contrasenia);
+        } else {
+            contraseniaOk = contrasenia === usuario.contrasenia;
+        }
 
-                if (!contraseniaOk) {
-                    return res.render('login', {
-                        contraseniaError: "La contraseña es incorrecta",
-                        emailError: null,
-                        emailIngresado: email
-                    });
-                }
-
-                req.session.usuarioLogged = {
-                    id: usuario.id,
-                    email: usuario.email,
-                    usuario: usuario.usuario,
-                    foto_perfil: usuario.foto_perfil
-                }
-
-                if (recordarme) {
-                    res.cookie("usuarioEmail", usuario.email, { maxAge: 1000 * 60 * 60 * 24 * 30 })
-                }
-
-                return res.redirect('/users/profile');
-            })
-            .catch(function (error) {
-                console.log("Error en login:", Error);
-                return res.send(error);
+        if (!contraseniaOk) {
+            return res.render('login', {
+                contraseniaError: "La contraseña es incorrecta",
+                emailError: null,
+                emailIngresado: email
             });
+        }
+
+        req.session.usuarioLogged = {
+            id: usuario.id,
+            email: usuario.email,
+            usuario: usuario.usuario,
+            foto_perfil: usuario.foto_perfil
+        }
+
+        if (recordarme) {
+            res.cookie("usuarioEmail", usuario.email, { maxAge: 1000 * 60 * 60 * 24 * 30 })
+        }
+
+        return res.redirect('/users/profile');
+        })
+        .catch(function (error) {
+            console.log("Error en login:", Error);
+            return res.send(error);
+        });
     },
     
     register: function (req, res) {

@@ -26,12 +26,12 @@
                     <% if (producto.comentarios && producto.comentarios.length > 0) { %>
                         <% for (let i = 0; i < producto.comentarios.length; i++) { %>
                             <article>
-                                <img src="/images/users/<%= producto.comentarios[i].usuario?.foto_perfil || '/images/default-user.png' %>" alt="Foto de perfil" class="comment-user-img">
+                                <img src="/images/users/<%= producto.comentarios[i].usuario.foto_perfil || '/images/default-user.png' %>" alt="Foto de perfil" class="comment-user-img">
                                 <div class="data">
                                     <p class="user"> 
                                         <strong>
                                             <a href="/users/profile/<%= producto.comentarios[i].usuario_id %>">
-                                                <%= producto.comentarios[i].usuario?.usuario || 'Usuario Anónimo' %>
+                                                <%= producto.comentarios[i].usuario.usuario || 'Usuario Anónimo' %>
                                             </a>
                                         </strong>
                                     </p>

@@ -1,5 +1,4 @@
 const { Op } = require('sequelize');
-const data = require('../db/index')
 const db = require('../database/models');
 
 const productController = {

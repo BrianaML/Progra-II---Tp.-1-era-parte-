@@ -33,7 +33,7 @@ app.use(function(req, res, next) {
 	return next();
 });
 
-app.use(function userLoggedMiddleware(req, res, next) {
+app.use(function userLoggedMid(req, res, next) {
   res.locals.isLogged = false;
 
   if (req.session.usuarioLogged) {
@@ -44,12 +44,12 @@ app.use(function userLoggedMiddleware(req, res, next) {
 
   if (req.cookies.usuarioEmail) {
     db.usuario.findOne({ where: { email: req.cookies.usuarioEmail } })
-      .then(usuario => {
+      .then(function(usuario) {
         if (usuario) {
           req.session.usuarioLogged = {
             id: usuario.id,
             email: usuario.email,
-            nombre_usuario: usuario.nombre_usuario
+            nombre_usuario: usuario.usuario
           };
           res.locals.isLogged = true;
           res.locals.usuario = req.session.usuarioLogged;
@@ -59,7 +59,7 @@ app.use(function userLoggedMiddleware(req, res, next) {
   } else {
     return next();
   }
-})
+});
 
 app.use('/', indexRouter);
 app.use("/product", productRouter)
