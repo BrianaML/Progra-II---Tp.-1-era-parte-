@@ -72,14 +72,14 @@ const usersController = {
         db.usuario.findOne({
             where: { email: email }
         })
-            .then(function (usuario) {
-                if (!usuario) {
-                    return res.render('login', {
-                        emailError: "El email ingresado no está registrado",
-                        contraseniaError: null,
-                        emailIngresado: email
-                    });
-                }
+        .then(function (usuario) {
+            if (!usuario) {
+                return res.render('login', {
+                    emailError: "El email ingresado no está registrado",
+                    contraseniaError: null,
+                    emailIngresado: email
+                });
+            }
 
                 let contraseniaOk;
 
